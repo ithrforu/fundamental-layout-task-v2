@@ -21,7 +21,7 @@ fundamental-layout-task-v2
 │   ├── css
 │   │   └── import
 │   │   │  └── theme.css
-│   ├── styles.css
+│   │   └── styles.css
 │   ├── images
 │   │  ├── balloon-sq1.jpg
 │   │  ├── balloon-sq2.jpg
