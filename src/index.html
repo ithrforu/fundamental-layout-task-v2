@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Layout Task v2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, inital-scale=1">
+	<meta name="color-scheme" content="">
+	<meta name="theme-color" content="">
+	<script>
+		document.documentElement.style.display = 'none';
+	</script>
+	<link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body class="body--theme-dark">
+	<header class="header">
+		<div class="header__logo">My exciting website!</div>
+	</header>
+	<div class="top-elements">
+		<nav class="menu top-elements__menu"><button class="menu__button" type="button" aria-expanded="false" aria-controls="menu__list"><svg class="menu__glyph" viewBox="0 0 30 30" stroke="#000" aria-hidden="true">
+					<g stroke-width="3" stroke-linecap="butt">
+						<path class="menu__glyph-line menu__glyph-line--top" d="M 2 6 l26 0"></path>
+						<path class="menu__glyph-line menu__glyph-line--midlle" d="M 2 15 l26 0"></path>
+						<path class="menu__glyph-line menu__glyph-line--bottom" d="M 2 24 l26 0"></path>
+					</g>
+				</svg></button>
+			<ul class="menu__list" id="menu__list">
+				<li class="menu__item"><a class="menu__link" href="#" title="Home">Home</a></li>
+				<li class="menu__item"><a class="menu__link menu__link--submenu-container" href="#" title="Blog">Blog</a>
+					<ul class="menu__submenu-list">
+						<li class="menu__submenu-item"><a class="menu__link menu__link--submenu" href="#" title="Work">Work</a></li>
+						<li class="menu__submenu-item"><a class="menu__link menu__link--submenu" href="#" title="Chill">Chill</a></li>
+						<li class="menu__submenu-item"><a class="menu__link menu__link--submenu" href="#" title="Off top">Off top</a></li>
+					</ul>
+				</li>
+				<li class="menu__item"><a class="menu__link" href="#" title="About Us">About Us</a></li>
+				<li class="menu__item"><a class="menu__link" href="#" title="Our history">Our history</a></li>
+				<li class="menu__item"><a class="menu__link" href="#" title="Contacts">Contacts</a></li>
+			</ul>
+		</nav>
+		<div class="theme-toggle top-elements__theme-toggle"><input class="theme-toggle__input" type="checkbox" role="switch" id="toggle"><label class="theme-toggle__label" for="toggle"><span class="theme-toggle__span theme-toggle__span--on">Dark</span><span class="theme-toggle__span theme-toggle__span--off">Light</span></label>
+			<script src="js/main.min.js"></script>
+		</div>
+	</div>
+	<main class="main">
+		<article class="article">
+			<h1 class="article__title">An Exciting Blog Post</h1><img class="article__feature" src="images/balloon-sq6.jpg" alt="placeholder">
+			<p class="article__text">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+			<p class="article__text">Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+			<p class="article__text">Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+			<p class="article__text">Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.</p>
+			<p class="article__text">Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout char </p>
+		</article>
+		<aside class="aside">
+			<h2 class="aside__title">Photography</h2>
+			<ul class="photos">
+				<li class="photos__item"><img class="photos_image" src="images/balloon-sq1.jpg" alt="placeholder"></li>
+				<li class="photos__item"><img class="photos_image" src="images/balloon-sq2.jpg" alt="placeholder"></li>
+				<li class="photos__item"><img class="photos_image" src="images/balloon-sq3.jpg" alt="placeholder"></li>
+				<li class="photos__item"><img class="photos_image" src="images/balloon-sq4.jpg" alt="placeholder"></li>
+				<li class="photos__item"><img class="photos_image" src="images/balloon-sq5.jpg" alt="placeholder"></li>
+			</ul>
+		</aside>
+	</main>
+</body>
+</html>
