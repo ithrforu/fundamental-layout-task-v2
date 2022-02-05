@@ -41,6 +41,7 @@ fundamental-layout-task-v2
 │   │   │   └── top-elements.pug
 │   │   └── index.pug
 │   └── index.html
+├── .editorconfig
 ├── .gitignore
 ├── README.md
 └── gulpfile.js
