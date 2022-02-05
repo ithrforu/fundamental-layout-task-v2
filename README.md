@@ -11,7 +11,7 @@
 * For start print: ```gulp``` (developer mode by default).
 * For build project print: ```gulp build``` (build mode).
 
-If you do everything correct, you will have a browser with a local server open. The build mode involves project optimization: images compression, minification of HTML, CSS and JS files for uploading to the server (current build version on [gh-pages(https://github.com/ithrforu/fundamental-layout-task-v2/tree/gh-pages/)] branch).
+If you do everything correct, you will have a browser with a local server open. The build mode involves project optimization: images compression, minification of HTML, CSS and JS files for uploading to the server (current build version on [gh-pages](https://github.com/ithrforu/fundamental-layout-task-v2/tree/gh-pages/) branch).
 
 ## :open_file_folder: Files stucture
 
