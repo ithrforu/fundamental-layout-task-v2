@@ -1,6 +1,6 @@
 # Fundamental layout task (updated)
 
-[GitHub Pages](https://ithrforu.github.io/fundamental-layout-task-v2/)
+:man_technologist: [GitHub Pages](https://ithrforu.github.io/fundamental-layout-task-v2/)
 
 ## :hammer_and_wrench: Build installing
 * Install [NodeJS](https://nodejs.org/en/) ***16.13.2 LTS** (or another new version)* . 
