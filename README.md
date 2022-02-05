@@ -20,25 +20,25 @@ fundamental-layout-task-v2
 ├── src
 │   ├── css
 │   │   ├── import
-│   │   │  └── theme.css
+│   │   │   └── theme.css
 │   │   └── styles.css
 │   ├── images
-│   │  ├── balloon-sq1.jpg
-│   │  ├── balloon-sq2.jpg
-│   │  ├── balloon-sq3.jpg
-│   │  ├── balloon-sq4.jpg
-│   │  ├── balloon-sq5.jpg
-│   │  └── balloon-sq6.jpg
+│   │   ├── balloon-sq1.jpg
+│   │   ├── balloon-sq2.jpg
+│   │   ├── balloon-sq3.jpg
+│   │   ├── balloon-sq4.jpg
+│   │   ├── balloon-sq5.jpg
+│   │   └── balloon-sq6.jpg
 │   ├── js
-│   │  └── main.js
+│   │   └── main.js
 │   ├── pug
 │   │   ├── include
-│   │   │  ├── aside.pug
-│   │   │  ├── head.pug
-│   │   │  ├── header.pug
-│   │   │  ├── main.pug
-│   │   │  ├── theme-toggle.pug
-│   │   │  └── top-elements.pug
+│   │   │   ├── aside.pug
+│   │   │   ├── head.pug
+│   │   │   ├── header.pug
+│   │   │   ├── main.pug
+│   │   │   ├── theme-toggle.pug
+│   │   │   └── top-elements.pug
 │   │   └── index.pug
 │   └── index.html
 ├── .gitignore
