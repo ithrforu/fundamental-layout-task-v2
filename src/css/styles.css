@@ -132,7 +132,7 @@ img:not([src*=".svg"]) {
 	opacity: 1;
 }
 
-.grid {
+.main {
 	max-width: 980px;
 	padding: 0 20px;
 	margin: 0 auto;
@@ -279,16 +279,16 @@ img:not([src*=".svg"]) {
 	}
 
 	.menu__submenu-list {
-	display: none;
-	background-color: var(--colorNavSubMenu);
-	font-size: .9em;
-	padding: 10px 0 10px;
-	border-radius: 5px;
-	margin: 5px 0 0 5px;
+		display: none;
+		background-color: var(--colorNavSubMenu);
+		font-size: .9em;
+		padding: 10px 0 10px;
+		border-radius: 5px;
+		margin: 5px 0 0 5px;
 }
 
-.menu__item:focus-within > .menu__submenu-list,
-.menu__item:hover > .menu__submenu-list {
+	.menu__item:focus-within > .menu__submenu-list,
+	.menu__item:hover > .menu__submenu-list {
 		position: absolute;
 		display: block;
 	}
