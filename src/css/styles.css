@@ -56,18 +56,18 @@ img:not([src*=".svg"]) {
 	text-shadow: 1px 1px 3px #ccc;
 }
 
-	.menu__link--submenu-container {
-		position: relative;
-	}
+.menu__link--submenu-container {
+	position: relative;
+}
 
-	.menu__link--submenu-container::after {
-		content: "";
-		width: 7px;
-		height: 5px;
-		background: url('../images/angle-down.svg') no-repeat center/cover;
-		position: absolute;
-		top: 21px;
-	}
+.menu__link--submenu-container::after {
+	content: "";
+	width: 7px;
+	height: 5px;
+	background: url('../images/angle-down.svg') no-repeat center/cover;
+	position: absolute;
+	top: 21px;
+}
 
 .theme-toggle {
 	position: relative;
