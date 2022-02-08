@@ -1,4 +1,6 @@
-import gulp          from 'gulp';
+import pkg from 'gulp';
+const { src, dest, parallel, series, watch } = pkg;
+
 import autoprefixer  from 'gulp-autoprefixer';
 import rename        from 'gulp-rename';
 
@@ -15,86 +17,125 @@ import del           from 'del';
 import browserSync   from 'browser-sync';
 
 const stylesCompress = () => {
-	return gulp.src(['src/css/**/*.css', '!src/css/*.min.css', '!src/css/import/**/*.css', '!src/css/normalize.css'])
+	return src(['src/css/**/*.css', '!src/css/import/**/*.css'])
 		.pipe(postCss([postCssImport, postCssCustom, postCsso]))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 10 version'],
 			grid: true
 		}))
-		.pipe(rename((path) => {path.basename += ".min";}))
-		.pipe(gulp.dest('src/css/'))
-		.pipe(browserSync.stream())
-}
+		.pipe(rename((path) => {path.basename += ".min"}))
+		.pipe(dest('build/css'))
+		.pipe(browserSync.stream());
+};
 
 const htmlPug = () => {
-	return gulp.src(['src/pug/**/*.pug', '!src/pug/include/**/*.pug']) 
-		.pipe(pug({pretty:false}))
-		.pipe(prettyHtml({indent_with_tabs: true, preserve_newlines:false, extra_liners: []}))
-		.pipe(gulp.dest('src/'))
-		.pipe(browserSync.stream())
-}
+	return src(['src/pug/**/*.pug', '!src/pug/include/**/*.pug'])
+		.pipe(pug())
+		.pipe(prettyHtml({
+			indent_with_tabs: true,
+			preserve_newlines:false,
+			extra_liners: []
+		}))
+		.pipe(dest('src'));
+};
+
+const htmlMinify = () => {
+	return src('src/**/*.html')
+		.pipe(htmlmin({
+			collapseWhitespace: true,
+			removeComments: true
+		}))
+		.pipe(dest('build'))
+		.pipe(browserSync.stream());
+};
 
 const scripts = () => {
-	return gulp.src(['src/js/**/*.js', '!src/js/**/*.min.js'])
+	return src('src/js/**/*.js')
 		.pipe(terser())
 		.pipe(rename((path) => {path.basename += ".min"}))
-		.pipe(gulp.dest('src/js/'))
-		.pipe(browserSync.stream())
-}
+		.pipe(dest('build/js/'))
+		.pipe(browserSync.stream());
+};
 
 const images = () => {
-	return gulp.src('src/images/**/*')
+	return src('src/images/**/*')
 		.pipe(imagemin([
-			imagemin.gifsicle({interlaced: true}),
-			imagemin.mozjpeg({quality: 75, progressive: true}),
-			imagemin.optipng({optimizationLevel: 5}),
+			imagemin.gifsicle({
+				interlaced: true
+			}),
+			imagemin.mozjpeg({
+				quality: 75,
+				progressive: true
+			}),
+			imagemin.optipng({ optimizationLevel: 5 }),
 			imagemin.svgo({
 				plugins: [
-					{removeViewBox: true},
-					{cleanupIDs: false}
+					{ removeViewBox: true },
+					{ cleanupIDs: false }
 				]
 			})
 		]))
-		.pipe(gulp.dest('build/images/'))
-}
+		.pipe(dest('build/images'));
+};
 
-const htmlMinify = () => {
-	return gulp.src(['src/**/*.html'])
-		.pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
-		.pipe(gulp.dest('build/'))
-}
+const copy = () => {
+	return src([
+		'src/fonts/**/*',
+		'src/images/**/*',
+	], {
+		base: 'src'
+	})
+		.pipe(dest('build'))
+		.pipe(browserSync.stream({
+			once: true
+		}));
+};
+
+const cleanDist = () => {
+	return del('build');
+};
 
 const browserSyncer = () => {
 	browserSync.init({
+		ui: false,
+		notify: false,
 		server: {
-			baseDir: 'src/',
+			baseDir: 'build',
 			watch: true
 		}
 	});
-}
+};
 
 const watching = () => {
-	gulp.watch(['src/css/**/*.css', '!src/css/**/*.min.css'], stylesCompress);
-	gulp.watch('src/pug/**/*.pug', htmlPug);
-	gulp.watch(['src/js/**/*.js', '!src/js/**/*.min.js'], scripts);
-}
+	watch('src/css/**/*.css', stylesCompress);
+	watch('src/pug/**/*.pug', series(htmlPug, htmlMinify));
+	watch('src/js/**/*.js', scripts);
+	watch([
+		'src/fonts/**/*',
+		'src/images/**/*',
+	], copy);
+};
 
-const cleanDist = () => {
-	return del(['build'])
-}
+const regularSeries = series(
+	cleanDist,
+	parallel(
+		stylesCompress,
+		htmlPug,
+		htmlMinify,
+		scripts
+	)
+);
 
-const cleanSrc = () => {
-	return del(['src/css/**/*.min.css', 'src/js/**/*.min.js'])
-}
+export const build = series(
+	regularSeries,
+	images
+);
 
-const building = () => {
-	return gulp.src([
-		`src/css/**/*.min.css`,
-		`src/js/**/*.min.js`
-		], {base: 'src/'})
-	.pipe(gulp.dest('build/'))
-}
-
-export const build = gulp.series(cleanDist, images, htmlMinify, building, cleanSrc);
-
-export default gulp.series(gulp.parallel(stylesCompress, htmlPug, scripts), gulp.parallel(browserSyncer, watching));
+export const dev = series(
+	regularSeries,
+	copy,
+	parallel(
+		browserSyncer,
+		watching
+	)
+);
