@@ -285,7 +285,7 @@ img:not([src*=".svg"]) {
 		padding: 10px 0 10px;
 		border-radius: 5px;
 		margin: 5px 0 0 5px;
-}
+	}
 
 	.menu__item:focus-within > .menu__submenu-list,
 	.menu__item:hover > .menu__submenu-list {
