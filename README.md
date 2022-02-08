@@ -2,7 +2,7 @@
 
 :man_technologist: [GitHub Pages](https://ithrforu.github.io/fundamental-layout-task-v2/)
 
-:cyclone: ```Features```: Pug, PostCss, Gulp, JavaScript, BEM. 
+:cyclone: *Features*: ```Pug, PostCss, Gulp, JavaScript, BEM```. 
 
 ## :hammer_and_wrench: Build installing
 * Install [NodeJS](https://nodejs.org/en/) ***16.13.2 LTS** (or another new version)* . 
