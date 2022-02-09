@@ -1,0 +1,26 @@
+//- Menu items in .menu__list (top-elements.pug)
+-
+	const menu__list = [
+		{ element: 'Home' },
+		{ element: 'Blog', 
+			submenu: [ 
+				{ element: 'Work', subItem: true },
+				{ element: 'Chill', subItem: true },
+				{ element: 'Off top', subItem: true } 
+			]
+		},
+		{ element: 'About Us' },
+		{ element: 'Our history' },
+		{ element: 'Contacts' }
+	];
+
+
+//- Array of aside block images sources (main.pug)
+-
+	const imgSource = [
+		'images/balloon-sq1.jpg',
+		'images/balloon-sq2.jpg',
+		'images/balloon-sq3.jpg',
+		'images/balloon-sq4.jpg',
+		'images/balloon-sq5.jpg'
+	];

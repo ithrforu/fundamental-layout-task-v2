@@ -1,0 +1,15 @@
+//- Menu in menu__list element inside of menu block (top-elements.pug)
+mixin menu(listData, listBlock, listId)
+	ul(class= listBlock + 'list' id= listId)
+		each item in listData
+			li(class= listBlock + 'item')
+				a(href="#" class= 'menu__link' + (item.submenu ? ' menu__link--submenu-container' : '') + (item.subItem ? ' menu__link--submenu' : '') title= item.element) #{item.element}
+				if (item.submenu)
+					+menu(item.submenu, 'menu__submenu-')
+
+//- Block with photos inside of aside block (main.pug)
+mixin photos-block
+	ul.photos
+		each src in imgSource
+			li.photos__item
+				img(class="photos_image" src=src alt="placeholder")

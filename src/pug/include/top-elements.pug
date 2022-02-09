@@ -9,16 +9,7 @@
 					path.menu__glyph-line.menu__glyph-line--midlle(d="M 2 15 l26 0")
 					path.menu__glyph-line.menu__glyph-line--bottom(d="M 2 24 l26 0")
 
-		//- Menu items
-		- const menu__list = [{element: 'Home'}, {element: 'Blog', submenu: [{element: 'Work', subItem: true}, {element: 'Chill', subItem: true}, {element: 'Off top', subItem: true}]}, {element: 'About Us'}, {element: 'Our history'}, {element: 'Contacts'}];
-		//- Generate nested list with menu__list object items
-		mixin menu(listData, listBlock, listId)
-			ul(class= listBlock + 'list' id= listId)
-				each item in listData
-					li(class= listBlock + 'item')
-						a(href="#" class= 'menu__link' + (item.submenu ? ' menu__link--submenu-container' : '') + (item.subItem ? ' menu__link--submenu' : '') title= item.element) #{item.element}
-						if (item.submenu)
-							+menu(item.submenu, 'menu__submenu-')
+		//- Menu__list element with page menu
 		+menu(menu__list, 'menu__', 'menu__list')
 
 	//- Site theme toggle
