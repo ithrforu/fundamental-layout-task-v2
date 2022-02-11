@@ -2,9 +2,11 @@
 	let preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 	let preferTheme = (preferDark ? 'dark' : 'light');
 	let theme = localStorage.getItem('theme');
+
 	if (theme === null) {
 		theme = preferTheme;
-	}
+	};
+
 	setTheme(theme);
 })();
 
@@ -17,14 +19,14 @@ function setTheme(theme) {
 	document.querySelector('.theme-toggle__label').setAttribute('title', `Click to change, ${theme} theme choiced`);
 
 	localStorage.setItem('theme', theme);
-}
+};
 
-window.addEventListener('load', function() {
+window.onload = () => {
 	document.getElementById('toggle').onchange = () => {
 		let theme = localStorage.getItem('theme');
 		setTheme((theme === 'dark' ? 'light' : 'dark'));
 	};
-});
+};
 
 document.documentElement.style.display = '';
 
@@ -34,9 +36,9 @@ const menuButton = document.querySelector('.menu__button');
 menuButton.onclick = () => {
 	menu.classList.toggle('menu--active');
 
-	if (menu.getAttribute('class') === 'menu--active') {
-		menuButton.setAttribute('aria-expanded', true);
+	if (menu.getAttribute('class').includes('menu--active')) {
+		menuButton.setAttribute('aria-expanded', 'true');
 	} else {
-		menuButton.setAttribute('aria-expanded', false);
-	}
-}
+		menuButton.setAttribute('aria-expanded', 'false');
+	};
+};
