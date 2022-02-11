@@ -7,6 +7,11 @@ mixin menu(listData, listBlock, listId)
 				if (item.submenu)
 					+menu(item.submenu, 'menu__submenu-')
 
+//- Artcle text in .article (main.pug)
+mixin articleText
+	each articleItem in articleItems
+		p.article__text= articleItem
+
 //- Block with photos inside of aside block (main.pug)
 mixin photos-block
 	ul.photos

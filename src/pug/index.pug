@@ -1,11 +1,7 @@
-include include/data
-include include/mixins
+extends base
+block index-page
+	include include/blocks/header
+	include include/blocks/top-elements
+	include include/blocks/main
 
-doctype html
-html(lang="en")
-	include include/head
-	body.body--theme-dark
-		include include/header
-		//- main.js loading in include/top-elements block
-		include include/top-elements
-		include include/main
+//- main.js loading in include/top-elements block

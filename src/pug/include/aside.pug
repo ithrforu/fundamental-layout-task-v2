@@ -1,9 +1,0 @@
-//- Photography block
-aside.aside
-	h2.aside__title Photography
-	ul.photos
-		//- Array of images sourse
-		- const imgSource = ['images/balloon-sq1.jpg', 'images/balloon-sq2.jpg', 'images/balloon-sq3.jpg', 'images/balloon-sq4.jpg', 'images/balloon-sq5.jpg'];
-		each src in imgSource
-			li.photos__item
-				img(class="photos_image" src=src alt="placeholder")

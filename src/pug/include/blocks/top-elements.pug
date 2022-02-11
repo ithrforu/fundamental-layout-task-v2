@@ -16,8 +16,10 @@
 	.theme-toggle.top-elements__theme-toggle
 		input.theme-toggle__input(type="checkbox" role="switch" id="toggle")
 		label.theme-toggle__label(for="toggle")
-			span.theme-toggle__span.theme-toggle__span--on Dark
-			span.theme-toggle__span.theme-toggle__span--off Light
+			span.theme-toggle__span.theme-toggle__span--on
+				| Dark
+			span.theme-toggle__span.theme-toggle__span--off
+				| Light
 
 		//- Theme toggle and mobile button scripts load after HTML parsed theme toggle.
 		script(src="js/main.min.js")
