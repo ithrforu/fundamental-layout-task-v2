@@ -3,7 +3,8 @@ mixin menu(listData, listBlock, listId)
 	ul(class= listBlock + 'list' id= listId)
 		each item in listData
 			li(class= listBlock + 'item')
-				a(href="#" class= 'menu__link' + (item.submenu ? ' menu__link--submenu-container' : '') + (item.subItem ? ' menu__link--submenu' : '') title= item.element) #{item.element}
+				a(href="#" class= 'menu__link' + (item.submenu ? ' menu__link--submenu-container': '') + (item.subItem ? ' menu__link--submenu' : '') title= item.element)
+					|#{item.element}
 				if (item.submenu)
 					+menu(item.submenu, 'menu__submenu-')
 
