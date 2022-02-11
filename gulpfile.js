@@ -38,8 +38,7 @@ const htmlPug = () => {
 		.pipe(pug())
 		.pipe(prettyHtml({
 			indent_with_tabs: true,
-			preserve_newlines:false,
-			extra_liners: []
+			preserve_newlines:false
 		}))
 		.pipe(dest('src'));
 };
