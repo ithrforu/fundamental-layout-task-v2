@@ -19,7 +19,8 @@ import browserSync   from 'browser-sync';
 const stylesCompress = () => {
 	return src([
 		'src/css/**/*.css',
-		'!src/css/import/**/*.css'])
+		'!src/css/import/**/*.css'
+	])
 		.pipe(postCss([postCssImport, postCssCustom, postCsso]))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 10 version'],
@@ -34,7 +35,8 @@ const htmlPug = () => {
 	return src([
 		'src/pug/**/*.pug',
 		'!src/pug/include/**/*.pug',
-		'!src/pug/base.pug'])
+		'!src/pug/base.pug'
+	])
 		.pipe(pug())
 		.pipe(prettyHtml({
 			indent_with_tabs: true,
@@ -85,7 +87,7 @@ const images = () => {
 const copy = () => {
 	return src([
 		'src/fonts/**/*',
-		'src/images/**/*',
+		'src/images/**/*'
 	], {
 		base: 'src'
 	})
