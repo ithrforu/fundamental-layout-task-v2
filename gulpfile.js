@@ -59,7 +59,7 @@ const scripts = () => {
 	return src('src/js/**/*.js')
 		.pipe(terser())
 		.pipe(rename((path) => {path.basename += ".min"}))
-		.pipe(dest('build/js/'))
+		.pipe(dest('build/js'))
 		.pipe(browserSync.stream());
 };
 
@@ -123,11 +123,13 @@ const watching = () => {
 };
 
 const regularSeries = series(
-	cleanDist,
 	parallel(
-		stylesCompress,
-		htmlPug,
+		cleanDist,
+		htmlPug
+	),
+	parallel(
 		htmlMinify,
+		stylesCompress,
 		scripts
 	)
 );
