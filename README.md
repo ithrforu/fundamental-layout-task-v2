@@ -35,16 +35,18 @@ fundamental-layout-task-v2
 │   │   └── main.js
 │   ├── pug
 │   │   ├── include
-│   │   │   ├── aside.pug
-│   │   │   ├── head.pug
-│   │   │   ├── header.pug
-│   │   │   ├── main.pug
-│   │   │   ├── theme-toggle.pug
-│   │   │   └── top-elements.pug
+│   │   │   ├── blocks
+│   │   │   │	├── header.pug
+│   │   │   │	├── main.pug
+│   │   │   │	└── top-elements.pug
+│   │   │   ├── data.pug
+│   │   │   └── mixins.pug
+│   │   ├── base.pug
 │   │   └── index.pug
 │   └── index.html
 ├── .editorconfig
 ├── .gitignore
 ├── README.md
-└── gulpfile.js
+├── gulpfile.js
+└──package.json
 ```
