@@ -19,7 +19,7 @@ function setTheme(theme) {
 	document.querySelector('.theme-toggle__label').setAttribute('title', `Click to change, ${theme} theme choiced`);
 
 	localStorage.setItem('theme', theme);
-};
+}
 
 window.onload = () => {
 	document.getElementById('toggle').onchange = () => {
@@ -40,5 +40,5 @@ menuButton.onclick = () => {
 		menuButton.setAttribute('aria-expanded', 'true');
 	} else {
 		menuButton.setAttribute('aria-expanded', 'false');
-	};
+	}
 };
