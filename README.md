@@ -48,5 +48,5 @@ fundamental-layout-task-v2
 ├── .gitignore
 ├── README.md
 ├── gulpfile.js
-└──package.json
+└── package.json
 ```
