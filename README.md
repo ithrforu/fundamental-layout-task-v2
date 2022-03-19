@@ -13,7 +13,7 @@
 * For start print: ```gulp dev``` (developer mode).
 * For build project print: ```gulp build``` (build mode).
 
-If you do everything correct and start developer mode, you will have a browser with a local server open. The build mode involves project optimization: images compression, minification of HTML, CSS and JS files for uploading to the server (current build version on [gh-pages](/../tree/gh-pages/) branch).
+If you do everything correct and start developer mode, you will have a browser with a local server open. The build mode involves project optimization: images compression, minification of HTML, CSS and JS files for uploading to the server (current build version on [gh-pages](../../tree/gh-pages/) branch).
 
 ## :open_file_folder: Files stucture
 
