@@ -8,7 +8,7 @@
 * Install [NodeJS](https://nodejs.org/en/) ***16.13.2 LTS** (or another new version)* . 
 * Download build with [Git](https://git-scm.com/downloads): ```git clone https://ithrforu.github.io/fundamental-layout-task-v2/```
 * Install ```gulp``` globally: ```npm i --global gulp-cli```
-* Move to build folder: ```cd ~/fundamental-layout-task-v2```
+* Move to project folder: ```cd ~/fundamental-layout-task-v2```
 * Download dependencies: ```npm i```
 * For start print: ```gulp dev``` (developer mode).
 * For build project print: ```gulp build``` (build mode).
